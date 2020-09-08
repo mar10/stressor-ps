@@ -50,6 +50,12 @@ tasks:
     message: |
       Version {version}
 
+  # 'build': `setup.y bdist_wheel`, ...
+  - task: build
+    targets:
+      - sdist
+      - bdist_wheel
+
   - task: push
     tags: true
 
