@@ -1,6 +1,6 @@
 # ![logo](https://raw.githubusercontent.com/mar10/stressor/master/stressor/monitor/htdocs/stressor_48x48.png) stressor-ps
-[![Latest Version](https://img.shields.io/pypi/v/stressor.svg)](https://pypi.python.org/pypi/stressor/)
-[![License](https://img.shields.io/pypi/l/stressor.svg)](https://github.com/mar10/stressor/blob/master/LICENSE.txt)
+[![Latest Version](https://img.shields.io/pypi/v/stressor-ps.svg)](https://pypi.python.org/pypi/stressor-ps/)
+[![License](https://img.shields.io/pypi/l/stressor-ps.svg)](https://github.com/mar10/stressor-ps/blob/master/LICENSE.txt)
 [![StackOverflow: stressor](https://img.shields.io/badge/StackOverflow-stressor-blue.svg)](https://stackoverflow.com/questions/tagged/stressor)
 
 
