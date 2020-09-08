@@ -7,7 +7,7 @@ import logging
 
 import psutil
 
-__version__ = "0.0.3-a1"
+__version__ = "0.0.3"
 
 logger = logging.getLogger("stressor")
 
