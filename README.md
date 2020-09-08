@@ -1,47 +1,52 @@
-# stressor-ps
+# ![logo](https://raw.githubusercontent.com/mar10/stressor/master/stressor/monitor/htdocs/stressor_48x48.png) stressor-ps
+[![Latest Version](https://img.shields.io/pypi/v/stressor.svg)](https://pypi.python.org/pypi/stressor/)
+[![License](https://img.shields.io/pypi/l/stressor.svg)](https://github.com/mar10/stressor/blob/master/LICENSE.txt)
+[![StackOverflow: stressor](https://img.shields.io/badge/StackOverflow-stressor-blue.svg)](https://stackoverflow.com/questions/tagged/stressor)
 
-> Stressor plugin that adds memory, cpu, and hardware testing functionality
+
+> Stressor plugin that adds memory, cpu, and hardware testing functionality.
+
+**Note:** <br>
+This extension is currently mainly a proof of concept and example for
+a [stressor](https://stressor.readthedocs.io/) plugin.
+Only a simple `PsAlloc` activity is implemented.<br>
+See also
+[Writing Plugins](https://stressor.readthedocs.io/en/latest/ug_writing_plugins.html)
+for details.
 
 
 # Usage
 
-The whole *stressor* confiuration is stored in a single YAML file with a few
-attributes and five mandatory sections.
-
-**See also**:
-See the annotated :doc:`ug_sample_stressor_yaml` for an example.
-
+This plugin adds new activities and macros that can be used in the
+same way as the the [standard activities and macros](
+https://stressor.readthedocs.io/en/latest/ug_reference.html).
 
 ## Activities
-### Common Args
-All activites share these common arguments
-(see also :class:`~stressor.plugins.base.ActivityBase`).
 
-
-### 'PsAlloc' Activity
-
+### `PsAlloc` Activity
+Allocate and hold some memory in order to simulate RAM usage and shortage.
 ```yaml
 sequences:
   main:
-    # 'init' is the reserved name for the set-up sequence.
+    # Allocate 1 GiB of RAM per running session
     - activity: PsAlloc
-      allocate_mb: 1000
+      allocate_mb: 1024
       per_session: true
 ```
 
-allocate_mb (float, default: **)
-    Check if the response has HTML format and matches an XPath expression::
-
-        - activity: GetRequest
-        url: /
-        assert_html:
-            "//*[@class='logo']": true
-
-    (See also the common ``assert_match`` argument.)
-
-per_session (bool, default: *false*)
+<dl>
+<dt>allocate_mb (float, mandatory)
+<dd>
+    Number of megabytes (1024^2 bytes) that should be allocated.
+<dd>
+<dt>per_session (bool, default: <i>false</i>)
+<dd>
+  If true, every session will alloacate the block of memory.
+  Otherwise (by default), only one session will allocate.
+</dd>
+</dl>
 
 
 ## Macros
 
-This extension does not implement new macros.
+This extension does not yet implement new macros.
